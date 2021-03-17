@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">InnoventesInter</string>
+    <string name="txttitle">S.</string>
+    <string name="txt_BankAccount">First of the few steps to set \nyou up with a Bank Account</string>
+    <string name="txt_Pannumber">PAN NUMBER</string>
+    <string name="txt_birthday">BIRTHDAY</string>
+    <string name="txt_dontpan">I don\'t have a PAN</string>
+    <string name="txt_Next">NEXT</string>
+    <string name="txt_content"><![CDATA[Providing PAN & Date of Birth helps us find and\nfetch your KYC from a central registry by the\nGovernment of India.Learn more ]]></string>
+    <string name="EmptypanMsg">Please Enter Pan card Number</string>
+    <string name="InvalidpanMsg">valid Pan Number !!</string>
+    <string name="EmptyDate">Please Enter Date</string>
+    <string name="EmptyMonth">Please Enter Month</string>
+    <string name="EmptyYear">Please Enter Year</string>
+    <string name="InvalidDate">Invalid Date !!</string>
+    <string name="SuccessMsg">Details submitted successfully</string>
+</resources>

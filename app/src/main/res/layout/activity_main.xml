@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.amberfleet.innoventesinter.MainViewModel" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_S"
+            style="@style/TextStyle.Heading.Primary"
+            android:layout_marginTop="24dp"
+            android:text="@string/txttitle"
+            android:textAllCaps="true"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_subtitle"
+            style="@style/TextStyle.Heading.Secondary"
+
+
+            android:layout_marginTop="32dp"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/txt_BankAccount"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/text_S" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtpannumber"
+            style="@style/TextStyle.Title.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_Pannumber"
+            android:textColor="@color/Darkgrey"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/text_subtitle" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_pan"
+            style="@style/TextInputLayoutEditText"
+            android:layout_marginTop="5dp"
+            android:nextFocusDown="@+id/edit_date"
+            android:inputType="textCapCharacters"
+            android:onTextChanged="@{mainViewModel.onpancardechanged}"
+            android:text="@={mainViewModel.pancard}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/txtpannumber"
+
+
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtbirthday"
+            style="@style/TextStyle.Title.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/txt_birthday"
+            android:textColor="@color/Darkgrey"
+            app:layout_constrainedWidth="true"
+
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/edit_pan" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_date"
+            style="@style/TextInputLayoutEditText"
+            android:layout_width="70dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:nextFocusRight="@id/edit_month"
+            android:imeOptions="actionNext"
+            android:maxLength="2"
+            android:onTextChanged="@{mainViewModel.onDateechanged}"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingEnd="0dp"
+            android:text="@={mainViewModel.date}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@+id/edit_month"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/txtbirthday" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_month"
+            style="@style/TextInputLayoutEditText"
+            android:layout_width="70dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:nextFocusRight="@id/edit_year"
+            android:inputType="number"
+            android:maxLength="2"
+            android:onTextChanged="@{mainViewModel.onMonthechanged}"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingEnd="0dp"
+            android:text="@={mainViewModel.month}"
+
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@+id/edit_year"
+            android:imeOptions="actionNext"
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edit_date"
+            app:layout_constraintTop_toBottomOf="@+id/txtbirthday" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_year"
+            style="@style/TextInputLayoutEditText"
+            android:layout_width="150dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:inputType="number"
+
+            android:maxLength="4"
+            android:onTextChanged="@{mainViewModel.onYearechanged}"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingEnd="0dp"
+            android:text="@={mainViewModel.year}"
+
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineend"
+
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edit_month"
+            app:layout_constraintTop_toBottomOf="@+id/txtbirthday" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_dont"
+            style="@style/TextStyle.Title.Medium"
+            android:gravity="center"
+            android:onClick="@{(v) -> mainViewModel.Dontclick(v)}"
+            android:padding="10dp"
+            android:text="@string/txt_dontpan"
+            android:textColor="@color/colorPrimary"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            style="@style/ButtonStyle"
+
+            android:enabled="@{mainViewModel.Enabled}"
+            android:onClick="@{() -> mainViewModel.onNextClick()}"
+            android:text="@string/txt_Next"
+
+            app:backgroundTint="@color/btnbg"
+            app:cornerRadius="5dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/text_dont"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_details"
+            style="@style/TextStyle.Title.Sub"
+            android:layout_marginBottom="10dp"
+
+
+            android:text="@string/txt_content"
+            android:textColor="@color/grey"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/btnNext"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
